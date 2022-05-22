@@ -13,10 +13,6 @@ struct Sections: View {
     @State var flag = true
     var body: some View {
         //root層
-        Section(header: HStack{Text("Service Name")
-            Button(action:{Reload()}){
-                Image(systemName: "network")
-            }}){
             var m1 = nextBranch(id: 1)
             ForEach(m1,id: \.self ){ model in
             //1階層
@@ -28,7 +24,7 @@ struct Sections: View {
                             Section(header: SectionHeader(title:"   2層目 \(model2.id). "+model2.childTitle)){
                                     var Content = nextBranch(id: model2.id)
                                     ForEach(Content,id: \.self){ model3 in
-                                        SubCell(Content: model3, title: model3.childTitle,id: model2.id)
+                                        SubCell(Content: model3, title: model3.childTitle,id: model3.id)
                                     }
                                   
                                 }
@@ -39,7 +35,7 @@ struct Sections: View {
                         }
             
             }
-        }
+        
               
             
         }

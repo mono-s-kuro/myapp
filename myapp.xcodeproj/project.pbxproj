@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE2A14FE283A340400C60D63 /* SubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE430961283A0FD0009F5F51 /* SubView.swift */; };
+		CE2A1500283A4B0400C60D63 /* ViewModelById.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A14FF283A4B0400C60D63 /* ViewModelById.swift */; };
 		CE4309422839C4C5009F5F51 /* TreeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43093C2839C4C5009F5F51 /* TreeViewModel.swift */; };
 		CE43094C2839E1DB009F5F51 /* query.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43094B2839E1DB009F5F51 /* query.swift */; };
 		CE4309502839F303009F5F51 /* Sections.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43094F2839F303009F5F51 /* Sections.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE2A14FF283A4B0400C60D63 /* ViewModelById.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelById.swift; sourceTree = "<group>"; };
 		CE43093C2839C4C5009F5F51 /* TreeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeViewModel.swift; sourceTree = "<group>"; };
 		CE43094B2839E1DB009F5F51 /* query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = query.swift; sourceTree = "<group>"; };
 		CE43094F2839F303009F5F51 /* Sections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sections.swift; sourceTree = "<group>"; };
@@ -55,8 +57,10 @@
 		CE430956283A0ECC009F5F51 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				CE43094B2839E1DB009F5F51 /* query.swift */,
 				CE43093C2839C4C5009F5F51 /* TreeViewModel.swift */,
 				CE6470172832DEC500A7D058 /* ViewModel.swift */,
+				CE2A14FF283A4B0400C60D63 /* ViewModelById.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -109,7 +113,6 @@
 				CE430962283A0FD3009F5F51 /* ContentView.swift */,
 				CE430961283A0FD0009F5F51 /* SubView.swift */,
 				CE430955283A0EA8009F5F51 /* Header */,
-				CE43094B2839E1DB009F5F51 /* query.swift */,
 				CE430956283A0ECC009F5F51 /* ViewModel */,
 				CE43095E283A0F83009F5F51 /* View */,
 				CEB229E2282F3C530028E6B4 /* Assets.xcassets */,
@@ -190,6 +193,7 @@
 				CE43095B283A0F45009F5F51 /* SubCell.swift in Sources */,
 				CE43094C2839E1DB009F5F51 /* query.swift in Sources */,
 				CE6470182832DEC500A7D058 /* ViewModel.swift in Sources */,
+				CE2A1500283A4B0400C60D63 /* ViewModelById.swift in Sources */,
 				CEB229DF282F3C500028E6B4 /* myappApp.swift in Sources */,
 				CE430963283A1018009F5F51 /* ContentView.swift in Sources */,
 				CE430954283A04CB009F5F51 /* SectionHeader.swift in Sources */,

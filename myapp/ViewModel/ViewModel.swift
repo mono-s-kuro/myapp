@@ -10,8 +10,8 @@ import SwiftUI
 
 struct DataModelElement: Hashable,Codable {
     let id: Int
-    let title: String
-    let body: String?
+    var title: String
+    var body: String?
     let order: Int
     let createdAt, updatedAt: String
 }

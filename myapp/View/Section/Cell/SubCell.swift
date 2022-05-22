@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SubCell: View {
     @StateObject var treeModel = TreeViewModel()
+//    @StateObject var viewModelByid = ViewModelById()
     @StateObject var viewModel = ViewModel()
     @State var Content:TreeDataModelElement
     @State var title:String
@@ -16,41 +17,36 @@ struct SubCell: View {
     @State var text:String?
  
     var body: some View {
-        
-        if let a = viewModel.DME.filter({$0.id != id}).first {
-                NavigationLink(destination: SubView(Content_Title: Content.childTitle, Content_Body: a.body!)){
+ 
+            NavigationLink(destination: SubView(id: id)){
                     Text("      3層目\(Content.id). \(Content.childTitle)").bold()
                 }
-            
-        }else{
-            Text("      3層目\(Content.id). \(Content.childTitle)")
-        }
-           
+        
        
     }
     
-    func HaveBody(id:Int)->(String?){
-        guard let a = viewModel.DME.filter({$0.id != id}).first else {
-            return nil
-        }
-        guard let b = a.body else{
-            return nil
-        }
-        text = b
-        return b
-            
-        
-        
-    }
-    func tekeContent(id:Int)->(DataModelElement?){
-        guard let a = viewModel.DME.filter({$0.id != id}).first else{return nil}
-        
-        return a
-    }
-    
-    func nextBranch(id:Int)->([TreeDataModelElement]){
-        return treeModel.tree.filter{$0.parentId == id}
-    }
+//    func HaveBody(id:Int)->(String?){
+//        guard let a = viewModel.DME.filter({$0.id != id}).first else {
+//            return nil
+//        }
+//        guard let b = a.body else{
+//            return nil
+//        }
+//        text = b
+//        return b
+//
+//
+//
+//    }
+//    func tekeContent(id:Int)->(DataModelElement?){
+//        guard let a = viewModel.DME.filter({$0.id != id}).first else{return nil}
+//
+//        return a
+//    }
+//
+//    func nextBranch(id:Int)->([TreeDataModelElement]){
+//        return treeModel.tree.filter{$0.parentId == id}
+//    }
 
 }
 
