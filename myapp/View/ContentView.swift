@@ -11,7 +11,7 @@ struct ContentView: View {
     
     @StateObject var treeModel = TreeViewModel()
     @StateObject var viewModel = ViewModel()
-    @State private var flag = true
+    @State public var flag = true
     var body: some View {
         NavigationView{
             List{

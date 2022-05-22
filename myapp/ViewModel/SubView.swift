@@ -19,24 +19,26 @@ struct SubView: View {
         
         VStack{
             HStack{
-                Button(action: {Query.put(title: title, body: self.body as! String, id: id)}){
+                Button(action: {
+                    Query.put(title: title, body:mybody , id: id)
+                    viewModelByid.fetch(id: id)
+                }){
                     
-                        Image("save").frame(width: 15, height: 15)
+                        Image("save")
                             .padding()
                             .foregroundColor(Color.white)
                             .background(Color.blue)
                    
                     
-                }.frame( height: UIScreen.main.bounds.width * 0.10,alignment: .leading)
+                }.frame(width: 40, height: 40, alignment: .trailing)
                 
-            }.frame(width: UIScreen.main.bounds.width * 0.5, height: UIScreen.main.bounds.width * 0.2,alignment: .trailing)
-            
+            }
             List{
                 
                 TextField("", text: $title).padding(3)
                 TextField("", text: $mybody)
-                    .frame(width: UIScreen.main.bounds.width * 0.6, height: UIScreen.main.bounds.height * 0.70,alignment: .leading)
-               
+                
+                    
                
             }.listRowBackground(Color.blue)
                 .onAppear{
@@ -47,13 +49,9 @@ struct SubView: View {
                     }
                    
                 }
-                .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.width * 0.7)
-            
+                
 
         }
-        .frame(width: UIScreen.main.bounds.width * 0.9 , height: UIScreen.main.bounds.width * 0.8 ,alignment: .top)
         
     }
 }
-
-
