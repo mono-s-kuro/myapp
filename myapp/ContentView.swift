@@ -8,25 +8,32 @@
 import SwiftUI
 struct ContentView: View{
     @StateObject var viewModel = ViewModel()
-//    @StateObject var isSelected = 0
+    
     var body: some View {
         NavigationView{
-            List{
-                ForEach(viewModel.DME, id: \.self) { DME in
+            List(viewModel.DME, id: \.self) { DME in
                     HStack{
-                        
-                        NavigationLink(destination: SubView(Content_Title: DME.title, Content_Body: isnil(s: DME.body))){
+                        if DME.body == nil {
                             Text(DME.title)
                                 .bold()
+                        }else{
+                            NavigationLink(destination: SubView(Content_Title: DME.title, Content_Body: isnil(s: DME.body))){
+                                Text(DME.title)
+                                    .bold()
+                            }
                         }
+                            
+                       
                     }.padding(3)
-                }
+                
             }
             
             .navigationTitle("ServiceName")
                 .onAppear{
                     viewModel.fetch()
                 }
+                
+                
                 
         }
     }
