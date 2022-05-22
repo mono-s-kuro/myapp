@@ -12,15 +12,16 @@ struct SubCell: View {
     @StateObject var viewModel = ViewModel()
     @State var Content:TreeDataModelElement
     @State var title:String
-   
+    @State var id:Int
+    @State var text:String?
+ 
     var body: some View {
-       
-        var take = tekeContent(id:Content.id)
-        var body = take?.body
-        if(take?.body != nil ){
-            NavigationLink(destination: SubView(Content_Title: Content.childTitle, Content_Body: body!)){
-                Text("      3層目\(Content.id). \(Content.childTitle)").bold()
-            }
+        
+        if let a = viewModel.DME.filter({$0.id != id}).first {
+                NavigationLink(destination: SubView(Content_Title: Content.childTitle, Content_Body: a.body!)){
+                    Text("      3層目\(Content.id). \(Content.childTitle)").bold()
+                }
+            
         }else{
             Text("      3層目\(Content.id). \(Content.childTitle)")
         }
@@ -29,15 +30,24 @@ struct SubCell: View {
     }
     
     func HaveBody(id:Int)->(String?){
-        let a = viewModel.DME.filter{$0.id != id}.first?.body
-        print("\(id) \(a)")
-        return a
+        guard let a = viewModel.DME.filter({$0.id != id}).first else {
+            return nil
+        }
+        guard let b = a.body else{
+            return nil
+        }
+        text = b
+        return b
+            
+        
+        
     }
     func tekeContent(id:Int)->(DataModelElement?){
-        let a = viewModel.DME.filter{$0.id != id}.first
-        print("\(id) \(a)")
+        guard let a = viewModel.DME.filter({$0.id != id}).first else{return nil}
+        
         return a
     }
+    
     func nextBranch(id:Int)->([TreeDataModelElement]){
         return treeModel.tree.filter{$0.parentId == id}
     }

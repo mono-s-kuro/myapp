@@ -28,7 +28,7 @@ struct Sections: View {
                             Section(header: SectionHeader(title:"   2層目 \(model2.id). "+model2.childTitle)){
                                     var Content = nextBranch(id: model2.id)
                                     ForEach(Content,id: \.self){ model3 in
-                                        SubCell(Content: model3, title: model3.childTitle)
+                                        SubCell(Content: model3, title: model3.childTitle,id: model2.id)
                                     }
                                   
                                 }

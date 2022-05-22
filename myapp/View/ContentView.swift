@@ -23,6 +23,10 @@ struct ContentView: View {
         .onAppear{
             treeModel.fetch()
             viewModel.fetch()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                print(viewModel.DME)
+            }
+            
         }
         
     }
