@@ -17,11 +17,11 @@ struct Sections: View {
             ForEach(m1,id: \.self ){ model in
             //1階層
                 
-                Section(header: SectionHeader(title:"1層目　\(model.id)" + model.childTitle)){
+                Section(header: SectionHeader(title:model.childTitle)){
                     if (nextBranch(id: model.id).count > 0){
 //                        2層目
                         ForEach(treeModel.tree.filter{$0.parentId == model.childId},id: \.self ){ model2 in
-                            Section(header: SectionHeader(title:"   2層目 \(model2.id). "+model2.childTitle)){
+                            Section(header: SectionHeader(title:"   "+model2.childTitle)){
                                     var Content = nextBranch(id: model2.id)
                                     ForEach(Content,id: \.self){ model3 in
                                         SubCell(Content: model3, title: model3.childTitle,id: model3.id)
@@ -30,7 +30,7 @@ struct Sections: View {
                                 }
                         }
                         }else{
-                            Text("  ２層目\(model.id). "+model.childTitle)
+                            Text("  "+model.childTitle)
                             
                         }
             

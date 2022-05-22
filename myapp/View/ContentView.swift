@@ -14,12 +14,16 @@ struct ContentView: View {
     @State public var flag = true
     var body: some View {
         NavigationView{
-            List{
-            Sections(treeModel: treeModel, viewModel: viewModel)
+            VStack{
+                
+                List{
+                    Text("Service Name")
+                    Sections(treeModel: treeModel, viewModel: viewModel)
+                }
+                .listStyle(SidebarListStyle())
             }
-            .listStyle(SidebarListStyle())
+           
         }
-        .navigationTitle("ServiceName")
         .onAppear{
             treeModel.fetch()
             viewModel.fetch()

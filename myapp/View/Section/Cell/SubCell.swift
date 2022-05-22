@@ -19,7 +19,7 @@ struct SubCell: View {
     var body: some View {
  
             NavigationLink(destination: SubView(id: id)){
-                    Text("      3層目\(Content.id). \(Content.childTitle)").bold()
+                    Text("      \(Content.childTitle)").bold()
                 }
         
        
