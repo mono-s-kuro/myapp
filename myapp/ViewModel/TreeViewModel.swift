@@ -32,7 +32,7 @@ class TreeViewModel:ObservableObject{
     @Published var TreeModel:[TreeDataModelElement] = []
     func fetch(){
 //        URL生成
-        guard let url = URL(string:"http://192.168.3.3:3000/content-tree") else {
+        guard let url = URL(string:"http://192.168.3.7:3000/content-tree") else {
             return
         }
         
