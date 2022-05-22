@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE2A14FE283A340400C60D63 /* SubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE430961283A0FD0009F5F51 /* SubView.swift */; };
 		CE2A1500283A4B0400C60D63 /* ViewModelById.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A14FF283A4B0400C60D63 /* ViewModelById.swift */; };
+		CE2A1504283B045100C60D63 /* SubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A1503283B045100C60D63 /* SubView.swift */; };
 		CE4309422839C4C5009F5F51 /* TreeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43093C2839C4C5009F5F51 /* TreeViewModel.swift */; };
 		CE43094C2839E1DB009F5F51 /* query.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43094B2839E1DB009F5F51 /* query.swift */; };
 		CE4309502839F303009F5F51 /* Sections.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43094F2839F303009F5F51 /* Sections.swift */; };
@@ -22,12 +22,12 @@
 
 /* Begin PBXFileReference section */
 		CE2A14FF283A4B0400C60D63 /* ViewModelById.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelById.swift; sourceTree = "<group>"; };
+		CE2A1503283B045100C60D63 /* SubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubView.swift; sourceTree = "<group>"; };
 		CE43093C2839C4C5009F5F51 /* TreeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeViewModel.swift; sourceTree = "<group>"; };
 		CE43094B2839E1DB009F5F51 /* query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = query.swift; sourceTree = "<group>"; };
 		CE43094F2839F303009F5F51 /* Sections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sections.swift; sourceTree = "<group>"; };
 		CE430953283A04CB009F5F51 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		CE43095A283A0F45009F5F51 /* SubCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCell.swift; sourceTree = "<group>"; };
-		CE430961283A0FD0009F5F51 /* SubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SubView.swift; path = ViewModel/SubView.swift; sourceTree = "<group>"; };
 		CE430962283A0FD3009F5F51 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = View/ContentView.swift; sourceTree = "<group>"; };
 		CE6470172832DEC500A7D058 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		CEB229DB282F3C500028E6B4 /* myapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,7 +111,7 @@
 			children = (
 				CEB229DE282F3C500028E6B4 /* myappApp.swift */,
 				CE430962283A0FD3009F5F51 /* ContentView.swift */,
-				CE430961283A0FD0009F5F51 /* SubView.swift */,
+				CE2A1503283B045100C60D63 /* SubView.swift */,
 				CE430955283A0EA8009F5F51 /* Header */,
 				CE430956283A0ECC009F5F51 /* ViewModel */,
 				CE43095E283A0F83009F5F51 /* View */,
@@ -198,7 +198,7 @@
 				CE430963283A1018009F5F51 /* ContentView.swift in Sources */,
 				CE430954283A04CB009F5F51 /* SectionHeader.swift in Sources */,
 				CE4309502839F303009F5F51 /* Sections.swift in Sources */,
-				CE2A14FE283A340400C60D63 /* SubView.swift in Sources */,
+				CE2A1504283B045100C60D63 /* SubView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

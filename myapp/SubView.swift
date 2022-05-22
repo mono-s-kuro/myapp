@@ -8,20 +8,50 @@
 import SwiftUI
 
 struct SubView: View {
-    @State var Content_Title:String
-    @State var Content_Body:String
     
-    
+    @State var id:Int
+    @StateObject var viewModelByid = ViewModelById()
+    @StateObject var Query = query()
+    @State var title = ""
+    @State var mybody = ""
     var body: some View {
-        List{
-            
-            TextField("", text:$Content_Title).padding(3)
-                        
-            TextField("", text: $Content_Body)
-                .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.height * 0.75,alignment: .leading)
+        
+        
+        VStack{
+            HStack{
+                Button(action: {
+                    Query.put(title: title, body:mybody , id: id)
+                    viewModelByid.fetch(id: id)
+                }){
+                    
+                        Image("save")
+                            .padding()
+                            .foregroundColor(Color.white)
+                            .background(Color.blue)
+                   
+                    
+                }.frame(width: 40, height: 40, alignment: .trailing)
                 
-        }.listRowBackground(Color.blue)
+            }
+            List{
+                
+                TextField("", text: $title).padding(3)
+                TextField("", text: $mybody)
+                
+                    
+               
+            }.listRowBackground(Color.blue)
+                .onAppear{
+                    viewModelByid.fetch(id: id)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        title = viewModelByid.DME.title
+                        mybody = viewModelByid.DME.body ?? ""
+                    }
+                   
+                }
+                
+
+        }
+        
     }
 }
-
-
