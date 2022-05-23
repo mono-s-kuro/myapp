@@ -14,6 +14,7 @@ struct SubView: View {
     @StateObject var Query = query()
     @State var title = ""
     @State var mybody = ""
+    
     var body: some View {
         
         
@@ -40,7 +41,7 @@ struct SubView: View {
             List{
                 
                 TextField("", text: $title).padding(3)
-                TextField("", text: $mybody)
+                TextEditor(text: $mybody)
                 
                     
                
