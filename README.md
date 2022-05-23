@@ -7,7 +7,7 @@ ViewModeフォルダ直下にあるファイル全てのfetch関数内のipア�
 <h1>各クラスの説明</h1>
 <h2>myappAPP</h2>
 作成時からデフォルトで使用。変更なし
-ContentView　→ Sections(一層目、二層目) →SubCell(三層目＋SubViewへのナビゲーション)
+<h1>ContentView　→ Sections(一層目、二層目) →SubCell(三層目＋SubViewへのナビゲーション)</h1>
 NavigationViewの中にListを作り、次の画面に遷移できるようにした。
 
 階層構造再現のため、Sectionで階層的な構造と配列のループでリンクまで実装しようとしたが、
