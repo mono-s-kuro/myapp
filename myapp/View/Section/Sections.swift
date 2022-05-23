@@ -16,9 +16,10 @@ struct Sections: View {
             var m1 = nextBranch(id: 1)
             ForEach(m1,id: \.self ){ model in
             //1階層
-                
                 Section(header: SectionHeader(title:model.childTitle)){
                     if (nextBranch(id: model.id).count > 0){
+                        
+                        
 //                        2層目
                         ForEach(treeModel.tree.filter{$0.parentId == model.childId},id: \.self ){ model2 in
                             Section(header: SectionHeader(title:"   "+model2.childTitle)){

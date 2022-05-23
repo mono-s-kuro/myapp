@@ -18,6 +18,8 @@ struct ContentView: View {
                 
                 List{
                     Text("Service Name")
+                    //リストの中身:   View/Section/                   ->  1~2階層
+                    //              Viwe/Section//Cell/SubCell      ->  ３層目
                     Sections(treeModel: treeModel, viewModel: viewModel)
                 }
                 .listStyle(SidebarListStyle())
@@ -27,9 +29,9 @@ struct ContentView: View {
         .onAppear{
             treeModel.fetch()
             viewModel.fetch()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                print(viewModel.DME)
-            }
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+//                print(viewModel.DME)
+//            }
             
         }
         

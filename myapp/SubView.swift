@@ -22,6 +22,10 @@ struct SubView: View {
                 Button(action: {
                     Query.put(title: title, body:mybody , id: id)
                     viewModelByid.fetch(id: id)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        title = viewModelByid.DME.title
+                        mybody = viewModelByid.DME.body ?? ""
+                    }
                 }){
                     
                         Image("save")

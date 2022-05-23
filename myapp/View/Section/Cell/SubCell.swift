@@ -18,6 +18,7 @@ struct SubCell: View {
  
     var body: some View {
  
+        //コンテンツまでのリンク   -> SubViewへ
             NavigationLink(destination: SubView(id: id)){
                     Text("      \(Content.childTitle)").bold()
                 }
