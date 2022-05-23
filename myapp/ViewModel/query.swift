@@ -16,33 +16,32 @@ class query:ObservableObject{
             return
         }
         
-                let request = NSMutableURLRequest(url: url)
-                //httpMethodの設定
-               
-                request.httpMethod = "PUT"
-               
-                //渡したい値が複数ある場合は＆で繋げます。（web開発している人なら当たり前にわかる）
-                let putParams = "title=\(title)&body=\(body)"
-                request.httpBody = putParams.data(using: .utf8)
+        let request = NSMutableURLRequest(url: url)
+        //httpMethodの設定
+       
+        request.httpMethod = "PUT"
+        //渡したい値が複数ある場合は＆で繋げます。（web開発している人なら当たり前にわかる）
+        let putParams = "title=\(title)&body=\(body)"
+        request.httpBody = putParams.data(using: .utf8)
 
-                let task = URLSession.shared.dataTask(with: request as URLRequest) { data, response, error in
-                    if error != nil {
-                        print("error is \(error!)")
-                        return
-                    }
+        let task = URLSession.shared.dataTask(with: request as URLRequest) { data, response, error in
+            if error != nil {
+                print("error is \(error!)")
+                return
+            }
 
-                    do {
-                        let myJSON = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
-                        if let parseJSON = myJSON {
-                            
-                            print(parseJSON)
-                        }
-                    } catch {
-                        print(error)
-                    }
-                    print(response)
+            do {
+                let myJSON = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+                if let parseJSON = myJSON {
+                    
+                    print(parseJSON)
                 }
-                task.resume()
+            } catch {
+                print(error)
+            }
+            print(response)
+        }
+        task.resume()
     }
     
 }
