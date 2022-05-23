@@ -11,39 +11,46 @@ class query:ObservableObject{
     
     func put(title:String,body:String,id:Int){
     //        URL生成
-        print("http://192.168.3.3:3000/content/\(id)")
-        guard let url = URL(string:"http://192.168.3.7:3000/content/\(id)") else {
+        print("\(Constants.apiEndpoint)/content/\(id)")
+        guard let url = URL(string:"\(Constants.apiEndpoint)/content/\(id)") else {
             return
         }
         
-                let request = NSMutableURLRequest(url: url)
-                //httpMethodの設定
-               
-                request.httpMethod = "PUT"
-               
+        let request = NSMutableURLRequest(url: url)
         
-                //渡したい値が複数ある場合は＆で繋げます。（web開発している人なら当たり前にわかる）
-                let putParams = "title=\(title)&body=\(body)"
-                request.httpBody = putParams.data(using: .utf8)
+        //httpMethodの設定
+        request.httpMethod = "PUT"
+        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+        
+        //パラメータの設定
+        var putParams:Dictionary<String,String> = [:]
+        putParams["title"] = title
+        putParams["body"] = body
+        
+        // パラメータをJSONに変換
+        guard let httpBody = try? JSONSerialization.data(withJSONObject: putParams, options: []) else { return }
+        
+        // httpBodyにセット
+        request.httpBody = httpBody
 
-                let task = URLSession.shared.dataTask(with: request as URLRequest) { data, response, error in
-                    if error != nil {
-                        print("error is \(error!)")
-                        return
-                    }
+        let task = URLSession.shared.dataTask(with: request as URLRequest) { data, response, error in
+            if error != nil {
+                print("error is \(error!)")
+                return
+            }
 
-                    do {
-                        let myJSON = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
-                        if let parseJSON = myJSON {
-                            
-                            print(parseJSON)
-                        }
-                    } catch {
-                        print(error)
-                    }
-                    print(response)
+            do {
+                let myJSON = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+                if let parseJSON = myJSON {
+                    
+                    print(parseJSON)
                 }
-                task.resume()
+            } catch {
+                print(error)
+            }
+            print(response)
+        }
+        task.resume()
     }
     
 }
