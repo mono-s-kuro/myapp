@@ -11,8 +11,8 @@ class query:ObservableObject{
     
     func put(title:String,body:String,id:Int){
     //        URL生成
-        print("http://192.168.3.3:3000/content/\(id)")
-        guard let url = URL(string:"http://192.168.3.7:3000/content/\(id)") else {
+        print("\(Constants.apiEndpoint)/content/\(id)")
+        guard let url = URL(string:"\(Constants.apiEndpoint)/content/\(id)") else {
             return
         }
         
@@ -21,7 +21,6 @@ class query:ObservableObject{
                
                 request.httpMethod = "PUT"
                
-        
                 //渡したい値が複数ある場合は＆で繋げます。（web開発している人なら当たり前にわかる）
                 let putParams = "title=\(title)&body=\(body)"
                 request.httpBody = putParams.data(using: .utf8)

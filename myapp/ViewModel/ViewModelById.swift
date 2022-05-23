@@ -14,7 +14,7 @@ class ViewModelById:ObservableObject{
     
     func fetch(id:Int){
 //        URL生成
-        guard let url = URL(string:"http://192.168.3.7:3000/content/\(id)") else {
+        guard let url = URL(string:"\(Constants.apiEndpoint)/content/\(id)") else {
             return
         }
         

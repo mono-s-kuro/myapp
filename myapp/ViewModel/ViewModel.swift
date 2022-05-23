@@ -19,7 +19,7 @@ class ViewModel:ObservableObject{
     @Published var DME:[DataModelElement] = []
     func fetch(){
 //        URL生成
-        guard let url = URL(string:"http://192.168.3.7:3000/content") else {
+        guard let url = URL(string:"\(Constants.apiEndpoint)/content") else {
             return
         }
         

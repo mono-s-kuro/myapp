@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		730CBA81283B620C00E4C939 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730CBA80283B620C00E4C939 /* Constants.swift */; };
 		CE2A1500283A4B0400C60D63 /* ViewModelById.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A14FF283A4B0400C60D63 /* ViewModelById.swift */; };
 		CE2A1504283B045100C60D63 /* SubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A1503283B045100C60D63 /* SubView.swift */; };
 		CE4309422839C4C5009F5F51 /* TreeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43093C2839C4C5009F5F51 /* TreeViewModel.swift */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		730CBA80283B620C00E4C939 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		730CBA82283B639900E4C939 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CE2A14FF283A4B0400C60D63 /* ViewModelById.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelById.swift; sourceTree = "<group>"; };
 		CE2A1503283B045100C60D63 /* SubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubView.swift; sourceTree = "<group>"; };
 		CE43093C2839C4C5009F5F51 /* TreeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeViewModel.swift; sourceTree = "<group>"; };
@@ -46,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		730CBA7F283B61B700E4C939 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				730CBA80283B620C00E4C939 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		CE430955283A0EA8009F5F51 /* Header */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +120,8 @@
 		CEB229DD282F3C500028E6B4 /* myapp */ = {
 			isa = PBXGroup;
 			children = (
+				730CBA82283B639900E4C939 /* Info.plist */,
+				730CBA7F283B61B700E4C939 /* Constants */,
 				CEB229DE282F3C500028E6B4 /* myappApp.swift */,
 				CE430962283A0FD3009F5F51 /* ContentView.swift */,
 				CE2A1503283B045100C60D63 /* SubView.swift */,
@@ -190,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE4309422839C4C5009F5F51 /* TreeViewModel.swift in Sources */,
+				730CBA81283B620C00E4C939 /* Constants.swift in Sources */,
 				CE43095B283A0F45009F5F51 /* SubCell.swift in Sources */,
 				CE43094C2839E1DB009F5F51 /* query.swift in Sources */,
 				CE6470182832DEC500A7D058 /* ViewModel.swift in Sources */,
@@ -327,9 +341,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"myapp/Preview Content\"";
-				DEVELOPMENT_TEAM = XBZHLZ8V26;
+				DEVELOPMENT_TEAM = 6A34CV3X7V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = myapp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -356,9 +371,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"myapp/Preview Content\"";
-				DEVELOPMENT_TEAM = XBZHLZ8V26;
+				DEVELOPMENT_TEAM = 6A34CV3X7V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = myapp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
