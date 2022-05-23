@@ -17,12 +17,21 @@ class query:ObservableObject{
         }
         
         let request = NSMutableURLRequest(url: url)
+        
         //httpMethodの設定
-       
         request.httpMethod = "PUT"
-        //渡したい値が複数ある場合は＆で繋げます。（web開発している人なら当たり前にわかる）
-        let putParams = "title=\(title)&body=\(body)"
-        request.httpBody = putParams.data(using: .utf8)
+        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+        
+        //パラメータの設定
+        var putParams:Dictionary<String,String> = [:]
+        putParams["title"] = title
+        putParams["body"] = body
+        
+        // パラメータをJSONに変換
+        guard let httpBody = try? JSONSerialization.data(withJSONObject: putParams, options: []) else { return }
+        
+        // httpBodyにセット
+        request.httpBody = httpBody
 
         let task = URLSession.shared.dataTask(with: request as URLRequest) { data, response, error in
             if error != nil {
