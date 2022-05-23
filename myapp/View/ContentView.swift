@@ -35,8 +35,6 @@ struct ContentView: View {
                     //              Viwe/Section//Cell/SubCell      ->  ３層目
                     Sections(treeModel: treeModel, viewModel: viewModel)
                 }
-                .frame(width:UIScreen.main.bounds.width )
-    
                 .listStyle(SidebarListStyle())
             }
            
@@ -62,7 +60,11 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+            ContentView()
+                .previewInterfaceOrientation(.landscapeLeft)
+        }
     }
     
 

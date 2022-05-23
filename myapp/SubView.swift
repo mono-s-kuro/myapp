@@ -36,7 +36,7 @@ struct SubView: View {
                     
                 }.cornerRadius(10)
                
-            }.frame(width: UIScreen.main.bounds.width-15,alignment:.trailing)
+            }.frame(width: UIScreen.main.bounds.width/2+100,alignment:.trailing)
             List{
                 
                 TextField("", text: $title).padding(3)
