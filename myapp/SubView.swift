@@ -31,12 +31,12 @@ struct SubView: View {
                         Image("save")
                             .padding()
                             .foregroundColor(Color.white)
-                            .background(Color.blue)
+                            .background(Color(red: 76.0/255, green: 176.0/255, blue: 246.0/255))
                    
                     
-                }.frame(width: 40, height: 40, alignment: .trailing)
-                
-            }
+                }.cornerRadius(10)
+               
+            }.frame(width: UIScreen.main.bounds.width-15,alignment:.trailing)
             List{
                 
                 TextField("", text: $title).padding(3)

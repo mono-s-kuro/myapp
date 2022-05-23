@@ -8,5 +8,5 @@
 import Foundation
 
 enum Constants {
-    static let apiEndpoint = "http://192.168.10.19:3000"
+    static let apiEndpoint = "http://192.168.3.7:3000"
 }
